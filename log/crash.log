@@ -1,0 +1,2198 @@
+2014-08-12 00:59:10 =ERROR REPORT====
+Error in process <0.1818.0> on node 'whistle_apps@kazoo.viithiisys.com' with exit value: {{nocatch,{case_clause,{match,[{0,10}]}}},[{cf_exe,'-spawn_cf_module/3-fun-1-',4,[{file,"src/cf_exe.erl"},{line,622}]}]}
+
+2014-08-12 10:18:31 =ERROR REPORT====
+** Generic server <0.184.0> terminating 
+** Last message in was maintain_connection
+** When Server state == {wh_couch_connection,2,"127.0.0.1",15986,[],[],false,false,true,{server,undefined,undefined,undefined,[]}}
+** Reason for termination == 
+** {{try_clause,{error,{conn_failed,{error,econnrefused}}}},[{wh_couch_connection,maybe_reconnect,1,[{file,"src/wh_couch_connection.erl"},{line,241}]},{wh_couch_connection,handle_info,2,[{file,"src/wh_couch_connection.erl"},{line,179}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-08-12 10:18:31 =CRASH REPORT====
+  crasher:
+    initial call: wh_couch_connection:init/1
+    pid: <0.184.0>
+    registered_name: []
+    exception exit: {{{try_clause,{error,{conn_failed,{error,econnrefused}}}},[{wh_couch_connection,maybe_reconnect,1,[{file,"src/wh_couch_connection.erl"},{line,241}]},{wh_couch_connection,handle_info,2,[{file,"src/wh_couch_connection.erl"},{line,179}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [wh_couch_connection_sup,whistle_couch_sup,<0.163.0>]
+    messages: []
+    links: [<0.178.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 293466
+  neighbours:
+2014-08-12 10:18:31 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_couch_connection_sup}
+     Context:    child_terminated
+     Reason:     {{try_clause,{error,{conn_failed,{error,econnrefused}}}},[{wh_couch_connection,maybe_reconnect,1,[{file,"src/wh_couch_connection.erl"},{line,241}]},{wh_couch_connection,handle_info,2,[{file,"src/wh_couch_connection.erl"},{line,179}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.184.0>},{name,wh_couch_connection},{mfargs,{wh_couch_connection,start_link,[{wh_couch_connection,2,"127.0.0.1",15986,[],[],false,false,true,{server,undefined,undefined,undefined,[]}}]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2014-08-12 10:18:31 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_couch_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.184.0>},{name,wh_couch_connection},{mfargs,{wh_couch_connection,start_link,[{wh_couch_connection,2,"127.0.0.1",15986,[],[],false,false,true,{server,undefined,undefined,undefined,[]}}]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2014-08-12 10:18:31 =SUPERVISOR REPORT====
+     Supervisor: {local,whistle_couch_sup}
+     Context:    child_terminated
+     Reason:     shutdown
+     Offender:   [{pid,<0.178.0>},{name,wh_couch_connection_sup},{mfargs,{wh_couch_connection_sup,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.876.0>},{name,'conference::maintenance'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','conference::maintenance']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.874.0>},{name,'sofia::replaced'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::replaced']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.883.0>},{name,'channel_move::move_released'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','channel_move::move_released']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.898.0>},{name,'CHANNEL_DATA'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_DATA',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.879.0>},{name,'spandsp::txfaxpageresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::txfaxpageresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.882.0>},{name,'spandsp::rxfaxnegociateresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxnegociateresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.882.0>},{name,'spandsp::rxfaxnegociateresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxnegociateresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.892.0>},{name,'RECORD_START'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','RECORD_START',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.891.0>},{name,'DTMF'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','DTMF',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.890.0>},{name,'DETECTED_TONE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','DETECTED_TONE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.885.0>},{name,'CHANNEL_CREATE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_CREATE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.884.0>},{name,'channel_move::move_complete'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','channel_move::move_complete']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.880.0>},{name,'spandsp::rxfaxpageresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxpageresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.878.0>},{name,'spandsp::rxfaxresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.875.0>},{name,'sofia::register'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::register']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.870.0>},{name,'whistle::noop'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','whistle::noop']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     shutdown
+     Offender:   [{pid,<0.869.0>},{name,'freeswitch@kazoo.viithiisys.com_event_stream_sup'},{mfargs,{ecallmgr_fs_event_stream_sup,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.842.0>},{name,'freeswitch@kazoo.viithiisys.com_authn'},{mfargs,{ecallmgr_fs_authn,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.844.0>},{name,'freeswitch@kazoo.viithiisys.com_channel'},{mfargs,{ecallmgr_fs_channel,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.845.0>},{name,'freeswitch@kazoo.viithiisys.com_config'},{mfargs,{ecallmgr_fs_config,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:32 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.843.0>},{name,'freeswitch@kazoo.viithiisys.com_route'},{mfargs,{ecallmgr_fs_route,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-12 10:18:43 =ERROR REPORT====
+Connection (<0.108.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-12 10:18:43 =ERROR REPORT====
+** Generic server <0.108.0> terminating 
+** Last message in was socket_closed
+** When Server state == {state,amqp_network_connection,{state,#Port<0.13923>,600,<0.111.0>,131072,<0.107.0>,{server_initiated_close,320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>},false},<0.110.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]},0,[{<<"capabilities">>,table,[{<<"publisher_confirms">>,bool,true},{<<"exchange_exchange_bindings">>,bool,true},{<<"basic.nack">>,bool,true},{<<"consumer_cancel_notify">>,bool,true},{<<"connection.blocked">>,bool,true},{<<"consumer_priorities">>,bool,true},{<<"authentication_failure_close">>,bool,true}]},{<<"copyright">>,longstr,<<"Copyright (C) 2007-2013 GoPivotal, Inc.">>},{<<"information">>,longstr,<<"Licensed under the MPL.  See http://www.rabbitmq.com/">>},{<<"platform">>,longstr,<<"Erlang/OTP">>},{<<"product">>,longstr,<<"RabbitMQ">>},{<<"version">>,longstr,<<"3.2.0">>}],none,{closing,server_initiated_close,{'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0},none}}
+** Reason for termination == 
+** socket_closed_unexpectedly
+2014-08-12 10:18:43 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.108.0>
+    registered_name: []
+    exception exit: {socket_closed_unexpectedly,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.106.0>,amqp_sup,<0.95.0>]
+    messages: []
+    links: [<0.106.0>,#Port<0.13923>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 3534
+  neighbours:
+2014-08-12 10:18:43 =SUPERVISOR REPORT====
+     Supervisor: {<0.106.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     socket_closed_unexpectedly
+     Offender:   [{pid,<0.108.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.107.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-12 10:18:43 =SUPERVISOR REPORT====
+     Supervisor: {<0.106.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.108.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.107.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-12 10:18:43 =ERROR REPORT====
+Connection (<0.110.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-12 10:18:43 =ERROR REPORT====
+** Generic server <0.110.0> terminating 
+** Last message in was socket_closed
+** When Server state == {state,amqp_network_connection,{state,#Port<0.14140>,600,<0.113.0>,131072,<0.109.0>,{server_initiated_close,320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>},false},<0.112.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]},0,[{<<"capabilities">>,table,[{<<"publisher_confirms">>,bool,true},{<<"exchange_exchange_bindings">>,bool,true},{<<"basic.nack">>,bool,true},{<<"consumer_cancel_notify">>,bool,true},{<<"connection.blocked">>,bool,true},{<<"consumer_priorities">>,bool,true},{<<"authentication_failure_close">>,bool,true}]},{<<"copyright">>,longstr,<<"Copyright (C) 2007-2013 GoPivotal, Inc.">>},{<<"information">>,longstr,<<"Licensed under the MPL.  See http://www.rabbitmq.com/">>},{<<"platform">>,longstr,<<"Erlang/OTP">>},{<<"product">>,longstr,<<"RabbitMQ">>},{<<"version">>,longstr,<<"3.2.0">>}],none,{closing,server_initiated_close,{'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0},none}}
+** Reason for termination == 
+** socket_closed_unexpectedly
+2014-08-12 10:18:43 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.110.0>
+    registered_name: []
+    exception exit: {socket_closed_unexpectedly,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.108.0>,amqp_sup,<0.97.0>]
+    messages: []
+    links: [<0.108.0>,#Port<0.14140>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 3737
+  neighbours:
+2014-08-12 10:18:43 =SUPERVISOR REPORT====
+     Supervisor: {<0.108.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     socket_closed_unexpectedly
+     Offender:   [{pid,<0.110.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.109.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-12 10:18:43 =SUPERVISOR REPORT====
+     Supervisor: {<0.108.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.110.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.109.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-13 00:22:11 =ERROR REPORT====
+Connection (<0.110.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-13 00:22:11 =ERROR REPORT====
+Connection (<0.108.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-13 00:22:19 =ERROR REPORT====
+** Generic server wh_gen_changes_offnet terminating 
+** Last message in was {error,#Ref<0.0.0.1921>,0,connection_closed}
+** When Server state == {gen_changes_state,#Ref<0.0.0.1921>,<0.656.0>,[184,<<"g1AAAACleJzLYWBgYM5gTmGQTcpMT84vTc5wyE6sys_XK8vMLMnIzCyuLNZLzs_NASpjSmRICg0NDclKFCFSA0h5aB4Lw8pVq1ZlJS4mUhdQA1D9KiD1HwiyEhmzAE_YOTY">>],wh_change_handler,{state,[{listener,<0.383.0>,#Ref<0.0.0.1135>,<<>>}],"offnet"},{db,{server,"127.0.0.1",15984,[],[{max_sessions,512},{max_pipeline_size,10},{connect_timeout,500}]},"offnet",[{max_sessions,512},{connect_timeout,500},{max_pipeline_size,10}]},[longpoll,{heartbeat,500}]}
+** Reason for termination == 
+** connection_closed
+2014-08-13 00:22:19 =CRASH REPORT====
+  crasher:
+    initial call: wh_gen_changes:init/1
+    pid: <0.384.0>
+    registered_name: wh_gen_changes_offnet
+    exception exit: {connection_closed,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,wake_up,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [wh_change_handler_sup,whistle_couch_sup,<0.168.0>]
+    messages: [{error,#Ref<0.0.0.1921>,0,{case_clause,{error,#Ref<0.0.0.1921>,0,connection_closed}}},{'DOWN',#Ref<0.0.0.1928>,process,<0.656.0>,normal}]
+    links: [<0.184.0>]
+    dictionary: [{callid,<<"changes_offnet">>}]
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 3119
+  neighbours:
+2014-08-13 00:22:19 =ERROR REPORT====
+** Generic server wh_gen_changes_system_config terminating 
+** Last message in was {error,#Ref<0.0.0.1173>,0,connection_closed}
+** When Server state == {gen_changes_state,#Ref<0.0.0.1173>,<0.395.0>,[183,<<"g1AAAACleJzLYWBgYM5gTmGQTcpMT84vTc5wyE6sys_XK8vMLMnIzCyuLNZLzs_NASpjSmRICg0NDclKVCZSA0h5aB4Lw8pVq1ZlJSYQqQuoAah-FZD6DwRZiSZZAEegOTU">>],wh_change_handler,{state,[{listener,<0.392.0>,#Ref<0.0.0.1171>,<<>>}],"system_config"},{db,{server,"127.0.0.1",15984,[],[{max_sessions,512},{max_pipeline_size,10},{connect_timeout,500}]},"system_config",[{max_sessions,512},{connect_timeout,500},{max_pipeline_size,10}]},[longpoll,{heartbeat,500}]}
+** Reason for termination == 
+** connection_closed
+2014-08-13 00:22:19 =CRASH REPORT====
+  crasher:
+    initial call: wh_gen_changes:init/1
+    pid: <0.393.0>
+    registered_name: wh_gen_changes_system_config
+    exception exit: {connection_closed,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,wake_up,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [wh_change_handler_sup,whistle_couch_sup,<0.168.0>]
+    messages: [{error,#Ref<0.0.0.1173>,0,{case_clause,{error,#Ref<0.0.0.1173>,0,connection_closed}}},{'DOWN',#Ref<0.0.0.1183>,process,<0.395.0>,normal}]
+    links: [<0.184.0>]
+    dictionary: [{callid,<<"changes_system_config">>}]
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 2328
+  neighbours:
+2014-08-13 00:22:19 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_change_handler_sup}
+     Context:    child_terminated
+     Reason:     connection_closed
+     Offender:   [{pid,<0.384.0>},{name,wh_change_handler},{mfargs,{wh_change_handler,start_link,[{db,{server,"127.0.0.1",15984,[],[{max_sessions,512},{max_pipeline_size,10},{connect_timeout,500}]},"offnet",[{max_sessions,512},{connect_timeout,500},{max_pipeline_size,10}]},[]]}},{restart_type,transient},{shutdown,2000},{child_type,worker}]
+
+2014-08-13 00:22:19 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_change_handler_sup}
+     Context:    child_terminated
+     Reason:     connection_closed
+     Offender:   [{pid,<0.393.0>},{name,wh_change_handler},{mfargs,{wh_change_handler,start_link,[{db,{server,"127.0.0.1",15984,[],[{max_sessions,512},{max_pipeline_size,10},{connect_timeout,500}]},"system_config",[{max_sessions,512},{connect_timeout,500},{max_pipeline_size,10}]},[]]}},{restart_type,transient},{shutdown,2000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.892.0>},{name,'CHANNEL_BRIDGE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_BRIDGE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.872.0>},{name,'sofia::replaced'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::replaced']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.893.0>},{name,'CHANNEL_UNBRIDGE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_UNBRIDGE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.877.0>},{name,'spandsp::txfaxpageresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::txfaxpageresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.871.0>},{name,'sofia::transferee'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::transferee']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.870.0>},{name,'sofia::transferor'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::transferor']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.870.0>},{name,'sofia::transferor'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::transferor']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.897.0>},{name,'CALL_SECURE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CALL_SECURE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.896.0>},{name,'CHANNEL_DATA'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_DATA',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.895.0>},{name,'CHANNEL_EXECUTE_COMPLETE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_EXECUTE_COMPLETE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.894.0>},{name,'CHANNEL_EXECUTE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_EXECUTE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.891.0>},{name,'RECORD_STOP'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','RECORD_STOP',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.890.0>},{name,'RECORD_START'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','RECORD_START',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.889.0>},{name,'DTMF'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','DTMF',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.888.0>},{name,'DETECTED_TONE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','DETECTED_TONE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.887.0>},{name,'CALL_UPDATE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CALL_UPDATE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.886.0>},{name,'CHANNEL_ANSWER'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_ANSWER',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.885.0>},{name,'CHANNEL_DESTROY'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_DESTROY',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.884.0>},{name,'CHANNEL_PROGRESS_MEDIA'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_PROGRESS_MEDIA',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.882.0>},{name,'channel_move::move_complete'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','channel_move::move_complete']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.881.0>},{name,'channel_move::move_released'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','channel_move::move_released']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.880.0>},{name,'spandsp::rxfaxnegociateresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxnegociateresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.879.0>},{name,'spandsp::txfaxnegociateresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::txfaxnegociateresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.878.0>},{name,'spandsp::rxfaxpageresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxpageresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.876.0>},{name,'spandsp::rxfaxresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.875.0>},{name,'spandsp::txfaxresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::txfaxresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.874.0>},{name,'conference::maintenance'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','conference::maintenance']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.873.0>},{name,'sofia::register'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::register']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.869.0>},{name,'whistle::masquerade'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','whistle::masquerade']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     shutdown
+     Offender:   [{pid,<0.867.0>},{name,'freeswitch@kazoo.viithiisys.com_event_stream_sup'},{mfargs,{ecallmgr_fs_event_stream_sup,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.840.0>},{name,'freeswitch@kazoo.viithiisys.com_authn'},{mfargs,{ecallmgr_fs_authn,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =ERROR REPORT====
+** Generic server <0.1520.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','whistle::masquerade',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','whistle::masquerade']},2000]}}
+2014-08-13 06:49:04 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1520.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','whistle::masquerade']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-whistle::masquerade">>}]
+    trap_exit: false
+    status: running
+    heap_size: 377
+    stack_size: 24
+    reductions: 1599
+  neighbours:
+2014-08-13 06:49:04 =ERROR REPORT====
+** Generic server <0.1519.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','whistle::noop',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','whistle::noop']},2000]}}
+2014-08-13 06:49:04 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1519.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','whistle::noop']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-whistle::noop">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1549
+  neighbours:
+2014-08-13 06:49:04 =ERROR REPORT====
+** Generic server <0.1522.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::transferee',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::transferee']},2000]}}
+2014-08-13 06:49:04 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1522.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::transferee']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-sofia::transferee">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1650
+  neighbours:
+2014-08-13 06:49:04 =ERROR REPORT====
+** Generic server <0.1524.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::register',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::register']},2000]}}
+2014-08-13 06:49:04 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1524.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::register']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-sofia::register">>}]
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 1591
+  neighbours:
+2014-08-13 06:49:04 =ERROR REPORT====
+** Generic server <0.1523.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::replaced',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::replaced']},2000]}}
+2014-08-13 06:49:04 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1523.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::replaced']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-sofia::replaced">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1628
+  neighbours:
+2014-08-13 06:49:04 =ERROR REPORT====
+** Generic server <0.1521.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::transferor',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::transferor']},2000]}}
+2014-08-13 06:49:04 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1521.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::transferor']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-sofia::transferor">>}]
+    trap_exit: false
+    status: running
+    heap_size: 377
+    stack_size: 24
+    reductions: 1612
+  neighbours:
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.842.0>},{name,'freeswitch@kazoo.viithiisys.com_channel'},{mfargs,{ecallmgr_fs_channel,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','whistle::masquerade']},2000]}}
+     Offender:   [{pid,<0.1520.1>},{name,'whistle::masquerade'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','whistle::masquerade']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:04 =ERROR REPORT====
+** Generic server <0.1526.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::txfaxresult',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::txfaxresult']},2000]}}
+2014-08-13 06:49:04 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1526.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::txfaxresult']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-spandsp::txfaxresult">>}]
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 1696
+  neighbours:
+2014-08-13 06:49:04 =ERROR REPORT====
+** Generic server <0.1528.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::txfaxpageresult',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::txfaxpageresult']},2000]}}
+2014-08-13 06:49:04 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1528.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::txfaxpageresult']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-spandsp::txfaxpageresult">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1723
+  neighbours:
+2014-08-13 06:49:04 =ERROR REPORT====
+** Generic server <0.1527.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxresult',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::rxfaxresult']},2000]}}
+2014-08-13 06:49:04 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1527.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::rxfaxresult']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-spandsp::rxfaxresult">>}]
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 1716
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1530.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::txfaxnegociateresult',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::txfaxnegociateresult']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1530.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::txfaxnegociateresult']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-spandsp::txfaxnegociateresult">>}]
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 1764
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1532.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','channel_move::move_released',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','channel_move::move_released']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1532.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','channel_move::move_released']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-channel_move::move_released">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1800
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1531.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxnegociateresult',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::rxfaxnegociateresult']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1531.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::rxfaxnegociateresult']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-spandsp::rxfaxnegociateresult">>}]
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 1769
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1529.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxpageresult',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::rxfaxpageresult']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1529.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::rxfaxpageresult']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-spandsp::rxfaxpageresult">>}]
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 1748
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1525.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','conference::maintenance',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','conference::maintenance']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1525.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','conference::maintenance']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-conference::maintenance">>}]
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 1755
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1534.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CHANNEL_CREATE',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_CREATE']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1534.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_CREATE']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CHANNEL_CREATE-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1650
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1536.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CHANNEL_DESTROY',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_DESTROY']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1536.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_DESTROY']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CHANNEL_DESTROY-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1666
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1535.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CHANNEL_PROGRESS_MEDIA',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_PROGRESS_MEDIA']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1535.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_PROGRESS_MEDIA']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CHANNEL_PROGRESS_MEDIA-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 1665
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1538.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CALL_UPDATE',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CALL_UPDATE']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1538.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CALL_UPDATE']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CALL_UPDATE-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1571
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1540.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','DTMF',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['DTMF']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1540.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['DTMF']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-DTMF-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1599
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1539.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','DETECTED_TONE',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['DETECTED_TONE']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1539.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['DETECTED_TONE']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-DETECTED_TONE-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 1652
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1537.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CHANNEL_ANSWER',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_ANSWER']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1537.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_ANSWER']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CHANNEL_ANSWER-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 1667
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1542.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','RECORD_STOP',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['RECORD_STOP']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1542.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['RECORD_STOP']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-RECORD_STOP-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 1588
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1544.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CHANNEL_UNBRIDGE',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_UNBRIDGE']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1544.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_UNBRIDGE']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CHANNEL_UNBRIDGE-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 1704
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1543.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CHANNEL_BRIDGE',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_BRIDGE']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1543.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_BRIDGE']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CHANNEL_BRIDGE-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1625
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1546.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CHANNEL_EXECUTE_COMPLETE',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_EXECUTE_COMPLETE']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1546.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_EXECUTE_COMPLETE']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CHANNEL_EXECUTE_COMPLETE-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1729
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1548.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CALL_SECURE',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CALL_SECURE']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1548.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CALL_SECURE']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CALL_SECURE-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1624
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1547.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CHANNEL_DATA',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_DATA']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1547.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_DATA']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CHANNEL_DATA-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1641
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1545.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CHANNEL_EXECUTE',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_EXECUTE']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1545.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_EXECUTE']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CHANNEL_EXECUTE-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1674
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1541.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','RECORD_START',undefined,undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['RECORD_START']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1541.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['RECORD_START']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-RECORD_START-undefined">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1654
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1533.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','channel_move::move_complete',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','channel_move::move_complete']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1533.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','channel_move::move_complete']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: [{nodedown,'freeswitch@kazoo.viithiisys.com'}]
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-channel_move::move_complete">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1943
+  neighbours:
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.843.0>},{name,'freeswitch@kazoo.viithiisys.com_config'},{mfargs,{ecallmgr_fs_config,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','whistle::noop']},2000]}}
+     Offender:   [{pid,<0.1519.1>},{name,'whistle::noop'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','whistle::noop']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1551.1> terminating 
+** Last message in was {'$gen_cast',bind_to_directory}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]}
+** Reason for termination == 
+** exception
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1555.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','whistle::masquerade',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','whistle::masquerade']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1555.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','whistle::masquerade']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: []
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-whistle::masquerade">>}]
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 1885
+  neighbours:
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_authn:init/1
+    pid: <0.1551.1>
+    registered_name: []
+    exception exit: {exception,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: ['freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: []
+    links: [<0.832.0>]
+    dictionary: [{callid,'freeswitch@kazoo.viithiisys.com'}]
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 2303
+  neighbours:
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.841.0>},{name,'freeswitch@kazoo.viithiisys.com_route'},{mfargs,{ecallmgr_fs_route,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::transferee']},2000]}}
+     Offender:   [{pid,<0.1522.1>},{name,'sofia::transferee'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::transferee']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::register']},2000]}}
+     Offender:   [{pid,<0.1524.1>},{name,'sofia::register'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::register']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1558.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','whistle::noop',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','whistle::noop']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1558.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','whistle::noop']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: []
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-whistle::noop">>}]
+    trap_exit: false
+    status: running
+    heap_size: 377
+    stack_size: 24
+    reductions: 1890
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1561.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::transferee',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::transferee']},2000]}}
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1561.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::transferee']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: []
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-sofia::transferee">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1984
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1557.1> terminating 
+** Last message in was {'$gen_cast',bind_to_configuration}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]}
+** Reason for termination == 
+** exception
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_config:init/1
+    pid: <0.1557.1>
+    registered_name: []
+    exception exit: {exception,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: ['freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: []
+    links: [<0.832.0>]
+    dictionary: [{callid,'freeswitch@kazoo.viithiisys.com'}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 2581
+  neighbours:
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1560.1> terminating 
+** Last message in was {'$gen_cast',bind_to_dialplan}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]}
+** Reason for termination == 
+** exception
+2014-08-13 06:49:05 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_route:init/1
+    pid: <0.1560.1>
+    registered_name: []
+    exception exit: {exception,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: ['freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: []
+    links: [<0.832.0>]
+    dictionary: [{callid,'freeswitch@kazoo.viithiisys.com'}]
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 2545
+  neighbours:
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::replaced']},2000]}}
+     Offender:   [{pid,<0.1523.1>},{name,'sofia::replaced'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::replaced']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::transferor']},2000]}}
+     Offender:   [{pid,<0.1521.1>},{name,'sofia::transferor'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::transferor']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.1521.1>},{name,'sofia::transferor'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::transferor']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CALL_SECURE']},2000]}}
+     Offender:   [{pid,<0.1548.1>},{name,'CALL_SECURE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CALL_SECURE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_DATA']},2000]}}
+     Offender:   [{pid,<0.1547.1>},{name,'CHANNEL_DATA'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_DATA',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_EXECUTE_COMPLETE']},2000]}}
+     Offender:   [{pid,<0.1546.1>},{name,'CHANNEL_EXECUTE_COMPLETE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_EXECUTE_COMPLETE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_EXECUTE']},2000]}}
+     Offender:   [{pid,<0.1545.1>},{name,'CHANNEL_EXECUTE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_EXECUTE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_UNBRIDGE']},2000]}}
+     Offender:   [{pid,<0.1544.1>},{name,'CHANNEL_UNBRIDGE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_UNBRIDGE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_BRIDGE']},2000]}}
+     Offender:   [{pid,<0.1543.1>},{name,'CHANNEL_BRIDGE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_BRIDGE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['RECORD_STOP']},2000]}}
+     Offender:   [{pid,<0.1542.1>},{name,'RECORD_STOP'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','RECORD_STOP',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['RECORD_START']},2000]}}
+     Offender:   [{pid,<0.1541.1>},{name,'RECORD_START'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','RECORD_START',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['DTMF']},2000]}}
+     Offender:   [{pid,<0.1540.1>},{name,'DTMF'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','DTMF',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['DETECTED_TONE']},2000]}}
+     Offender:   [{pid,<0.1539.1>},{name,'DETECTED_TONE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','DETECTED_TONE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CALL_UPDATE']},2000]}}
+     Offender:   [{pid,<0.1538.1>},{name,'CALL_UPDATE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CALL_UPDATE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_ANSWER']},2000]}}
+     Offender:   [{pid,<0.1537.1>},{name,'CHANNEL_ANSWER'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_ANSWER',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_DESTROY']},2000]}}
+     Offender:   [{pid,<0.1536.1>},{name,'CHANNEL_DESTROY'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_DESTROY',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_PROGRESS_MEDIA']},2000]}}
+     Offender:   [{pid,<0.1535.1>},{name,'CHANNEL_PROGRESS_MEDIA'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_PROGRESS_MEDIA',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CHANNEL_CREATE']},2000]}}
+     Offender:   [{pid,<0.1534.1>},{name,'CHANNEL_CREATE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_CREATE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','channel_move::move_complete']},2000]}}
+     Offender:   [{pid,<0.1533.1>},{name,'channel_move::move_complete'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','channel_move::move_complete']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','channel_move::move_released']},2000]}}
+     Offender:   [{pid,<0.1532.1>},{name,'channel_move::move_released'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','channel_move::move_released']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::rxfaxnegociateresult']},2000]}}
+     Offender:   [{pid,<0.1531.1>},{name,'spandsp::rxfaxnegociateresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxnegociateresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::txfaxnegociateresult']},2000]}}
+     Offender:   [{pid,<0.1530.1>},{name,'spandsp::txfaxnegociateresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::txfaxnegociateresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::rxfaxpageresult']},2000]}}
+     Offender:   [{pid,<0.1529.1>},{name,'spandsp::rxfaxpageresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxpageresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::txfaxpageresult']},2000]}}
+     Offender:   [{pid,<0.1528.1>},{name,'spandsp::txfaxpageresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::txfaxpageresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::rxfaxresult']},2000]}}
+     Offender:   [{pid,<0.1527.1>},{name,'spandsp::rxfaxresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::rxfaxresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','spandsp::txfaxresult']},2000]}}
+     Offender:   [{pid,<0.1526.1>},{name,'spandsp::txfaxresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::txfaxresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:05 =ERROR REPORT====
+** Generic server <0.1563.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::register',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::register']},2000]}}
+2014-08-13 06:49:06 =ERROR REPORT====
+** Generic server <0.1565.1> terminating 
+** Last message in was {'$gen_cast',request_event_stream}
+** When Server state == {state,'freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::replaced',undefined,undefined,undefined}
+** Reason for termination == 
+** {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::replaced']},2000]}}
+2014-08-13 06:49:06 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','conference::maintenance']},2000]}}
+     Offender:   [{pid,<0.1525.1>},{name,'conference::maintenance'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','conference::maintenance']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:06 =CRASH REPORT====
+  crasher:
+    initial call: ecallmgr_fs_event_stream:init/1
+    pid: <0.1565.1>
+    registered_name: []
+    exception exit: {{{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::replaced']},2000]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.1518.1>,'freeswitch@kazoo.viithiisys.com',ecallmgr_fs_sup,ecallmgr_sup,<0.47.0>]
+    messages: []
+    links: [<0.1518.1>]
+    dictionary: [{callid,<<"freeswitch@kazoo.viithiisys.com-CUSTOM-sofia::replaced">>}]
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1569
+  neighbours:
+2014-08-13 06:49:06 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::replaced']},2000]}}
+     Offender:   [{pid,<0.1565.1>},{name,'sofia::replaced'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::replaced']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:06 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','sofia::transferee']},2000]}}
+     Offender:   [{pid,<0.1561.1>},{name,'sofia::transferee'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::transferee']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:06 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','whistle::masquerade']},2000]}}
+     Offender:   [{pid,<0.1555.1>},{name,'whistle::masquerade'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','whistle::masquerade']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:06 =SUPERVISOR REPORT====
+     Supervisor: {<0.1518.1>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     {{nodedown,'freeswitch@kazoo.viithiisys.com'},{gen_server,call,[{mod_kazoo,'freeswitch@kazoo.viithiisys.com'},{event,['CUSTOM','whistle::noop']},2000]}}
+     Offender:   [{pid,<0.1558.1>},{name,'whistle::noop'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','whistle::noop']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:06 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    shutdown_error
+     Reason:     exception
+     Offender:   [{pid,<0.1557.1>},{name,'freeswitch@kazoo.viithiisys.com_config'},{mfargs,{ecallmgr_fs_config,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:06 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    shutdown_error
+     Reason:     exception
+     Offender:   [{pid,<0.1560.1>},{name,'freeswitch@kazoo.viithiisys.com_route'},{mfargs,{ecallmgr_fs_route,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:06 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    shutdown_error
+     Reason:     exception
+     Offender:   [{pid,<0.1551.1>},{name,'freeswitch@kazoo.viithiisys.com_authn'},{mfargs,{ecallmgr_fs_authn,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-13 06:49:06 =ERROR REPORT====
+** Generic server <0.183.0> terminating 
+** Last message in was maintain_connection
+** When Server state == {wh_couch_connection,1,"127.0.0.1",15984,[],[],false,false,false,{server,undefined,undefined,undefined,[]}}
+** Reason for termination == 
+** {{try_clause,{error,{conn_failed,{error,econnrefused}}}},[{wh_couch_connection,maybe_reconnect,1,[{file,"src/wh_couch_connection.erl"},{line,241}]},{wh_couch_connection,handle_info,2,[{file,"src/wh_couch_connection.erl"},{line,179}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-08-13 06:49:06 =CRASH REPORT====
+  crasher:
+    initial call: wh_couch_connection:init/1
+    pid: <0.183.0>
+    registered_name: []
+    exception exit: {{{try_clause,{error,{conn_failed,{error,econnrefused}}}},[{wh_couch_connection,maybe_reconnect,1,[{file,"src/wh_couch_connection.erl"},{line,241}]},{wh_couch_connection,handle_info,2,[{file,"src/wh_couch_connection.erl"},{line,179}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [wh_couch_connection_sup,whistle_couch_sup,<0.163.0>]
+    messages: []
+    links: [<0.178.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 774957
+  neighbours:
+2014-08-13 06:49:06 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_couch_connection_sup}
+     Context:    child_terminated
+     Reason:     {{try_clause,{error,{conn_failed,{error,econnrefused}}}},[{wh_couch_connection,maybe_reconnect,1,[{file,"src/wh_couch_connection.erl"},{line,241}]},{wh_couch_connection,handle_info,2,[{file,"src/wh_couch_connection.erl"},{line,179}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.183.0>},{name,wh_couch_connection},{mfargs,{wh_couch_connection,start_link,[{wh_couch_connection,1,"127.0.0.1",15984,[],[],false,false,false,{server,undefined,undefined,undefined,[]}}]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2014-08-13 06:49:06 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_couch_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.183.0>},{name,wh_couch_connection},{mfargs,{wh_couch_connection,start_link,[{wh_couch_connection,1,"127.0.0.1",15984,[],[],false,false,false,{server,undefined,undefined,undefined,[]}}]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2014-08-13 06:49:06 =SUPERVISOR REPORT====
+     Supervisor: {local,whistle_couch_sup}
+     Context:    child_terminated
+     Reason:     shutdown
+     Offender:   [{pid,<0.178.0>},{name,wh_couch_connection_sup},{mfargs,{wh_couch_connection_sup,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2014-08-13 06:49:16 =ERROR REPORT====
+Connection (<0.108.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-13 06:49:16 =ERROR REPORT====
+** Generic server <0.108.0> terminating 
+** Last message in was socket_closed
+** When Server state == {state,amqp_network_connection,{state,#Port<0.13923>,600,<0.111.0>,131072,<0.107.0>,{server_initiated_close,320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>},false},<0.110.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]},0,[{<<"capabilities">>,table,[{<<"publisher_confirms">>,bool,true},{<<"exchange_exchange_bindings">>,bool,true},{<<"basic.nack">>,bool,true},{<<"consumer_cancel_notify">>,bool,true},{<<"connection.blocked">>,bool,true},{<<"consumer_priorities">>,bool,true},{<<"authentication_failure_close">>,bool,true}]},{<<"copyright">>,longstr,<<"Copyright (C) 2007-2013 GoPivotal, Inc.">>},{<<"information">>,longstr,<<"Licensed under the MPL.  See http://www.rabbitmq.com/">>},{<<"platform">>,longstr,<<"Erlang/OTP">>},{<<"product">>,longstr,<<"RabbitMQ">>},{<<"version">>,longstr,<<"3.2.0">>}],none,{closing,server_initiated_close,{'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0},none}}
+** Reason for termination == 
+** socket_closed_unexpectedly
+2014-08-13 06:49:16 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.108.0>
+    registered_name: []
+    exception exit: {socket_closed_unexpectedly,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.106.0>,amqp_sup,<0.95.0>]
+    messages: []
+    links: [<0.106.0>,#Port<0.13923>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 2661
+  neighbours:
+2014-08-13 06:49:16 =SUPERVISOR REPORT====
+     Supervisor: {<0.106.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     socket_closed_unexpectedly
+     Offender:   [{pid,<0.108.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.107.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-13 06:49:16 =SUPERVISOR REPORT====
+     Supervisor: {<0.106.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.108.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.107.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-13 06:49:16 =ERROR REPORT====
+Connection (<0.110.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-13 06:49:16 =ERROR REPORT====
+** Generic server <0.110.0> terminating 
+** Last message in was socket_closed
+** When Server state == {state,amqp_network_connection,{state,#Port<0.14140>,600,<0.113.0>,131072,<0.109.0>,{server_initiated_close,320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>},false},<0.112.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]},0,[{<<"capabilities">>,table,[{<<"publisher_confirms">>,bool,true},{<<"exchange_exchange_bindings">>,bool,true},{<<"basic.nack">>,bool,true},{<<"consumer_cancel_notify">>,bool,true},{<<"connection.blocked">>,bool,true},{<<"consumer_priorities">>,bool,true},{<<"authentication_failure_close">>,bool,true}]},{<<"copyright">>,longstr,<<"Copyright (C) 2007-2013 GoPivotal, Inc.">>},{<<"information">>,longstr,<<"Licensed under the MPL.  See http://www.rabbitmq.com/">>},{<<"platform">>,longstr,<<"Erlang/OTP">>},{<<"product">>,longstr,<<"RabbitMQ">>},{<<"version">>,longstr,<<"3.2.0">>}],none,{closing,server_initiated_close,{'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0},none}}
+** Reason for termination == 
+** socket_closed_unexpectedly
+2014-08-13 06:49:16 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.110.0>
+    registered_name: []
+    exception exit: {socket_closed_unexpectedly,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.108.0>,amqp_sup,<0.97.0>]
+    messages: []
+    links: [<0.108.0>,#Port<0.14140>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 3689
+  neighbours:
+2014-08-13 06:49:16 =SUPERVISOR REPORT====
+     Supervisor: {<0.108.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     socket_closed_unexpectedly
+     Offender:   [{pid,<0.110.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.109.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-13 06:49:16 =SUPERVISOR REPORT====
+     Supervisor: {<0.108.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.110.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.109.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-20 08:53:29 =ERROR REPORT====
+Connection (<0.108.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-20 08:53:29 =ERROR REPORT====
+Connection (<0.110.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-20 08:53:37 =ERROR REPORT====
+** Generic server wh_gen_changes_system_config terminating 
+** Last message in was {error,#Ref<0.0.0.3677>,0,connection_closed}
+** When Server state == {gen_changes_state,#Ref<0.0.0.3677>,<0.930.0>,[183,<<"g1AAAACleJzLYWBgYM5gTmGQTcpMT84vTc5wyE6sys_XK8vMLMnIzCyuLNZLzs_NASpjSmRICg0NDclKVCZSA0h5aB4Lw8pVq1ZlJSYQqQuoAah-FZD6DwRZiSZZAEegOTU">>],wh_change_handler,{state,[{listener,<0.927.0>,#Ref<0.0.0.3675>,<<>>}],"system_config"},{db,{server,"127.0.0.1",15984,[],[{max_sessions,512},{max_pipeline_size,10},{connect_timeout,500}]},"system_config",[{max_sessions,512},{connect_timeout,500},{max_pipeline_size,10}]},[longpoll,{heartbeat,500}]}
+** Reason for termination == 
+** connection_closed
+2014-08-20 08:53:37 =CRASH REPORT====
+  crasher:
+    initial call: wh_gen_changes:init/1
+    pid: <0.928.0>
+    registered_name: wh_gen_changes_system_config
+    exception exit: {connection_closed,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,wake_up,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [wh_change_handler_sup,whistle_couch_sup,<0.163.0>]
+    messages: [{error,#Ref<0.0.0.3677>,0,{case_clause,{error,#Ref<0.0.0.3677>,0,connection_closed}}},{'DOWN',#Ref<0.0.0.3687>,process,<0.930.0>,normal}]
+    links: [<0.180.0>]
+    dictionary: [{callid,<<"changes_system_config">>}]
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 2294
+  neighbours:
+2014-08-20 08:53:37 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_change_handler_sup}
+     Context:    child_terminated
+     Reason:     connection_closed
+     Offender:   [{pid,<0.928.0>},{name,wh_change_handler},{mfargs,{wh_change_handler,start_link,[{db,{server,"127.0.0.1",15984,[],[{max_sessions,512},{max_pipeline_size,10},{connect_timeout,500}]},"system_config",[{max_sessions,512},{connect_timeout,500},{max_pipeline_size,10}]},[]]}},{restart_type,transient},{shutdown,2000},{child_type,worker}]
+
+2014-08-20 08:53:37 =ERROR REPORT====
+** Generic server wh_gen_changes_offnet terminating 
+** Last message in was {error,#Ref<0.0.0.4459>,0,connection_closed}
+** When Server state == {gen_changes_state,#Ref<0.0.0.4459>,<0.1199.0>,[186,<<"g1AAAACleJzLYWBgYM5gTmGQTcpMT84vTc5wyE6sys_XK8vMLMnIzCyuLNZLzs_NASpjSmRICg0NDclKFCFSA0h5aB4Lw8pVq1ZlJS4lUhdQA1D9KiD1HwiyEhmzAFBMOTg">>],wh_change_handler,{state,[{listener,<0.912.0>,#Ref<0.0.0.3632>,<<>>}],"offnet"},{db,{server,"127.0.0.1",15984,[],[{max_sessions,512},{max_pipeline_size,10},{connect_timeout,500}]},"offnet",[{max_sessions,512},{connect_timeout,500},{max_pipeline_size,10}]},[longpoll,{heartbeat,500}]}
+** Reason for termination == 
+** connection_closed
+2014-08-20 08:53:37 =CRASH REPORT====
+  crasher:
+    initial call: wh_gen_changes:init/1
+    pid: <0.913.0>
+    registered_name: wh_gen_changes_offnet
+    exception exit: {connection_closed,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,wake_up,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [wh_change_handler_sup,whistle_couch_sup,<0.163.0>]
+    messages: [{error,#Ref<0.0.0.4459>,0,{case_clause,{error,#Ref<0.0.0.4459>,0,connection_closed}}},{'DOWN',#Ref<0.0.0.4466>,process,<0.1199.0>,normal}]
+    links: [<0.180.0>]
+    dictionary: [{callid,<<"changes_offnet">>}]
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 3124
+  neighbours:
+2014-08-20 08:53:37 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_change_handler_sup}
+     Context:    child_terminated
+     Reason:     connection_closed
+     Offender:   [{pid,<0.913.0>},{name,wh_change_handler},{mfargs,{wh_change_handler,start_link,[{db,{server,"127.0.0.1",15984,[],[{max_sessions,512},{max_pipeline_size,10},{connect_timeout,500}]},"offnet",[{max_sessions,512},{connect_timeout,500},{max_pipeline_size,10}]},[]]}},{restart_type,transient},{shutdown,2000},{child_type,worker}]
+
+2014-08-20 09:40:45 =ERROR REPORT====
+Error in process <0.11576.0> on node 'whistle_apps@kazoo.viithiisys.com' with exit value: {{nocatch,badarg},[{cf_exe,'-spawn_cf_module/3-fun-1-',4,[{file,"src/cf_exe.erl"},{line,622}]}]}
+
+2014-08-20 10:11:28 =ERROR REPORT====
+Error in process <0.1857.0> on node 'whistle_apps@kazoo.viithiisys.com' with exit value: {{nocatch,badarg},[{cf_exe,'-spawn_cf_module/3-fun-1-',4,[{file,"src/cf_exe.erl"},{line,622}]}]}
+
+2014-08-20 10:23:05 =ERROR REPORT====
+Error in process <0.1795.0> on node 'whistle_apps@kazoo.viithiisys.com' with exit value: {{nocatch,badarg},[{cf_exe,'-spawn_cf_module/3-fun-1-',4,[{file,"src/cf_exe.erl"},{line,622}]}]}
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.888.0>},{name,'CHANNEL_ANSWER'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_ANSWER',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.872.0>},{name,'sofia::transferor'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::transferor']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.889.0>},{name,'CALL_UPDATE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CALL_UPDATE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.886.0>},{name,'CHANNEL_PROGRESS_MEDIA'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_PROGRESS_MEDIA',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.870.0>},{name,'whistle::noop'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','whistle::noop']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.894.0>},{name,'CHANNEL_BRIDGE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_BRIDGE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.894.0>},{name,'CHANNEL_BRIDGE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_BRIDGE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {<0.869.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.884.0>},{name,'channel_move::move_complete'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','channel_move::move_complete']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     shutdown
+     Offender:   [{pid,<0.869.0>},{name,'freeswitch@kazoo.viithiisys.com_event_stream_sup'},{mfargs,{ecallmgr_fs_event_stream_sup,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.840.0>},{name,'freeswitch@kazoo.viithiisys.com_authn'},{mfargs,{ecallmgr_fs_authn,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.842.0>},{name,'freeswitch@kazoo.viithiisys.com_channel'},{mfargs,{ecallmgr_fs_channel,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.843.0>},{name,'freeswitch@kazoo.viithiisys.com_config'},{mfargs,{ecallmgr_fs_config,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:42 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.841.0>},{name,'freeswitch@kazoo.viithiisys.com_route'},{mfargs,{ecallmgr_fs_route,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-20 11:09:45 =ERROR REPORT====
+** Generic server <0.184.0> terminating 
+** Last message in was maintain_connection
+** When Server state == {wh_couch_connection,2,"127.0.0.1",15986,[],[],false,false,true,{server,undefined,undefined,undefined,[]}}
+** Reason for termination == 
+** {{try_clause,{error,{conn_failed,{error,econnrefused}}}},[{wh_couch_connection,maybe_reconnect,1,[{file,"src/wh_couch_connection.erl"},{line,241}]},{wh_couch_connection,handle_info,2,[{file,"src/wh_couch_connection.erl"},{line,179}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-08-20 11:09:45 =CRASH REPORT====
+  crasher:
+    initial call: wh_couch_connection:init/1
+    pid: <0.184.0>
+    registered_name: []
+    exception exit: {{{try_clause,{error,{conn_failed,{error,econnrefused}}}},[{wh_couch_connection,maybe_reconnect,1,[{file,"src/wh_couch_connection.erl"},{line,241}]},{wh_couch_connection,handle_info,2,[{file,"src/wh_couch_connection.erl"},{line,179}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [wh_couch_connection_sup,whistle_couch_sup,<0.163.0>]
+    messages: []
+    links: [<0.178.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 58294
+  neighbours:
+2014-08-20 11:09:45 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_couch_connection_sup}
+     Context:    child_terminated
+     Reason:     {{try_clause,{error,{conn_failed,{error,econnrefused}}}},[{wh_couch_connection,maybe_reconnect,1,[{file,"src/wh_couch_connection.erl"},{line,241}]},{wh_couch_connection,handle_info,2,[{file,"src/wh_couch_connection.erl"},{line,179}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.184.0>},{name,wh_couch_connection},{mfargs,{wh_couch_connection,start_link,[{wh_couch_connection,2,"127.0.0.1",15986,[],[],false,false,true,{server,undefined,undefined,undefined,[]}}]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2014-08-20 11:09:45 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_couch_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.184.0>},{name,wh_couch_connection},{mfargs,{wh_couch_connection,start_link,[{wh_couch_connection,2,"127.0.0.1",15986,[],[],false,false,true,{server,undefined,undefined,undefined,[]}}]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2014-08-20 11:09:45 =SUPERVISOR REPORT====
+     Supervisor: {local,whistle_couch_sup}
+     Context:    child_terminated
+     Reason:     shutdown
+     Offender:   [{pid,<0.178.0>},{name,wh_couch_connection_sup},{mfargs,{wh_couch_connection_sup,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2014-08-20 11:09:58 =ERROR REPORT====
+Connection (<0.110.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-20 11:09:59 =ERROR REPORT====
+Connection (<0.108.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-20 11:09:59 =ERROR REPORT====
+** Generic server <0.110.0> terminating 
+** Last message in was socket_closed
+** When Server state == {state,amqp_network_connection,{state,#Port<0.14140>,600,<0.113.0>,131072,<0.109.0>,{server_initiated_close,320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>},false},<0.112.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]},0,[{<<"capabilities">>,table,[{<<"publisher_confirms">>,bool,true},{<<"exchange_exchange_bindings">>,bool,true},{<<"basic.nack">>,bool,true},{<<"consumer_cancel_notify">>,bool,true},{<<"connection.blocked">>,bool,true},{<<"consumer_priorities">>,bool,true},{<<"authentication_failure_close">>,bool,true}]},{<<"copyright">>,longstr,<<"Copyright (C) 2007-2013 GoPivotal, Inc.">>},{<<"information">>,longstr,<<"Licensed under the MPL.  See http://www.rabbitmq.com/">>},{<<"platform">>,longstr,<<"Erlang/OTP">>},{<<"product">>,longstr,<<"RabbitMQ">>},{<<"version">>,longstr,<<"3.2.0">>}],none,{closing,server_initiated_close,{'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0},none}}
+** Reason for termination == 
+** socket_closed_unexpectedly
+2014-08-20 11:09:59 =ERROR REPORT====
+** Generic server <0.108.0> terminating 
+** Last message in was socket_closed
+** When Server state == {state,amqp_network_connection,{state,#Port<0.13923>,600,<0.111.0>,131072,<0.107.0>,{server_initiated_close,320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>},false},<0.110.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]},0,[{<<"capabilities">>,table,[{<<"publisher_confirms">>,bool,true},{<<"exchange_exchange_bindings">>,bool,true},{<<"basic.nack">>,bool,true},{<<"consumer_cancel_notify">>,bool,true},{<<"connection.blocked">>,bool,true},{<<"consumer_priorities">>,bool,true},{<<"authentication_failure_close">>,bool,true}]},{<<"copyright">>,longstr,<<"Copyright (C) 2007-2013 GoPivotal, Inc.">>},{<<"information">>,longstr,<<"Licensed under the MPL.  See http://www.rabbitmq.com/">>},{<<"platform">>,longstr,<<"Erlang/OTP">>},{<<"product">>,longstr,<<"RabbitMQ">>},{<<"version">>,longstr,<<"3.2.0">>}],none,{closing,server_initiated_close,{'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0},none}}
+** Reason for termination == 
+** socket_closed_unexpectedly
+2014-08-20 11:09:59 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.110.0>
+    registered_name: []
+    exception exit: {socket_closed_unexpectedly,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.108.0>,amqp_sup,<0.97.0>]
+    messages: []
+    links: [<0.108.0>,#Port<0.14140>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 3806
+  neighbours:
+2014-08-20 11:09:59 =SUPERVISOR REPORT====
+     Supervisor: {<0.108.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     socket_closed_unexpectedly
+     Offender:   [{pid,<0.110.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.109.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-20 11:09:59 =SUPERVISOR REPORT====
+     Supervisor: {<0.108.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.110.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.109.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-20 11:09:59 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.108.0>
+    registered_name: []
+    exception exit: {socket_closed_unexpectedly,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.106.0>,amqp_sup,<0.95.0>]
+    messages: []
+    links: [<0.106.0>,#Port<0.13923>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 2952
+  neighbours:
+2014-08-20 11:09:59 =SUPERVISOR REPORT====
+     Supervisor: {<0.106.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     socket_closed_unexpectedly
+     Offender:   [{pid,<0.108.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.107.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-20 11:09:59 =SUPERVISOR REPORT====
+     Supervisor: {<0.106.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.108.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.107.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-21 00:23:30 =ERROR REPORT====
+Connection (<0.110.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-21 00:23:30 =ERROR REPORT====
+Connection (<0.108.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-21 00:23:36 =ERROR REPORT====
+** Generic server wh_gen_changes_offnet terminating 
+** Last message in was {error,#Ref<0.0.0.4206>,0,connection_closed}
+** When Server state == {gen_changes_state,#Ref<0.0.0.4206>,<0.1211.0>,[192,<<"g1AAAACleJzLYWBgYM5gTmGQTcpMT84vTc5wyE6sys_XK8vMLMnIzCyuLNZLzs_NASpjSmRICg0NDclKFCFSA0h5aB4Lw8pVq1ZlJa4mUhdQA1D9KiD1HwiyEhmzAFGoOT4">>],wh_change_handler,{state,[{listener,<0.907.0>,#Ref<0.0.0.3240>,<<>>}],"offnet"},{db,{server,"127.0.0.1",15984,[],[{max_sessions,512},{max_pipeline_size,10},{connect_timeout,500}]},"offnet",[{max_sessions,512},{connect_timeout,500},{max_pipeline_size,10}]},[longpoll,{heartbeat,500}]}
+** Reason for termination == 
+** connection_closed
+2014-08-21 00:23:36 =CRASH REPORT====
+  crasher:
+    initial call: wh_gen_changes:init/1
+    pid: <0.908.0>
+    registered_name: wh_gen_changes_offnet
+    exception exit: {connection_closed,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,wake_up,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [wh_change_handler_sup,whistle_couch_sup,<0.163.0>]
+    messages: [{error,#Ref<0.0.0.4206>,0,{case_clause,{error,#Ref<0.0.0.4206>,0,connection_closed}}},{'DOWN',#Ref<0.0.0.4213>,process,<0.1211.0>,normal}]
+    links: [<0.180.0>]
+    dictionary: [{callid,<<"changes_offnet">>}]
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 3115
+  neighbours:
+2014-08-21 00:23:36 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_change_handler_sup}
+     Context:    child_terminated
+     Reason:     connection_closed
+     Offender:   [{pid,<0.908.0>},{name,wh_change_handler},{mfargs,{wh_change_handler,start_link,[{db,{server,"127.0.0.1",15984,[],[{max_sessions,512},{max_pipeline_size,10},{connect_timeout,500}]},"offnet",[{max_sessions,512},{connect_timeout,500},{max_pipeline_size,10}]},[]]}},{restart_type,transient},{shutdown,2000},{child_type,worker}]
+
+2014-08-21 00:23:36 =ERROR REPORT====
+** Generic server wh_gen_changes_system_config terminating 
+** Last message in was {error,#Ref<0.0.0.3303>,0,connection_closed}
+** When Server state == {gen_changes_state,#Ref<0.0.0.3303>,<0.925.0>,[183,<<"g1AAAACleJzLYWBgYM5gTmGQTcpMT84vTc5wyE6sys_XK8vMLMnIzCyuLNZLzs_NASpjSmRICg0NDclKVCZSA0h5aB4Lw8pVq1ZlJSYQqQuoAah-FZD6DwRZiSZZAEegOTU">>],wh_change_handler,{state,[{listener,<0.922.0>,#Ref<0.0.0.3301>,<<>>}],"system_config"},{db,{server,"127.0.0.1",15984,[],[{max_sessions,512},{max_pipeline_size,10},{connect_timeout,500}]},"system_config",[{max_sessions,512},{connect_timeout,500},{max_pipeline_size,10}]},[longpoll,{heartbeat,500}]}
+** Reason for termination == 
+** connection_closed
+2014-08-21 00:23:36 =CRASH REPORT====
+  crasher:
+    initial call: wh_gen_changes:init/1
+    pid: <0.923.0>
+    registered_name: wh_gen_changes_system_config
+    exception exit: {connection_closed,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,wake_up,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [wh_change_handler_sup,whistle_couch_sup,<0.163.0>]
+    messages: [{error,#Ref<0.0.0.3303>,0,{case_clause,{error,#Ref<0.0.0.3303>,0,connection_closed}}},{'DOWN',#Ref<0.0.0.3317>,process,<0.925.0>,normal}]
+    links: [<0.180.0>]
+    dictionary: [{callid,<<"changes_system_config">>}]
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 2320
+  neighbours:
+2014-08-21 00:23:36 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_change_handler_sup}
+     Context:    child_terminated
+     Reason:     connection_closed
+     Offender:   [{pid,<0.923.0>},{name,wh_change_handler},{mfargs,{wh_change_handler,start_link,[{db,{server,"127.0.0.1",15984,[],[{max_sessions,512},{max_pipeline_size,10},{connect_timeout,500}]},"system_config",[{max_sessions,512},{connect_timeout,500},{max_pipeline_size,10}]},[]]}},{restart_type,transient},{shutdown,2000},{child_type,worker}]
+
+2014-08-21 01:32:46 =ERROR REPORT====
+Error in process <0.2017.0> on node 'whistle_apps@kazoo.viithiisys.com' with exit value: {{nocatch,function_clause},[{cf_exe,'-spawn_cf_module/3-fun-1-',4,[{file,"src/cf_exe.erl"},{line,622}]}]}
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.890.0>},{name,'RECORD_START'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','RECORD_START',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.871.0>},{name,'sofia::transferee'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','sofia::transferee']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.887.0>},{name,'CALL_UPDATE'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CALL_UPDATE',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.886.0>},{name,'CHANNEL_ANSWER'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_ANSWER',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.879.0>},{name,'spandsp::txfaxnegociateresult'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','spandsp::txfaxnegociateresult']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.889.0>},{name,'DTMF'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','DTMF',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.889.0>},{name,'DTMF'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','DTMF',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.891.0>},{name,'RECORD_STOP'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','RECORD_STOP',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.884.0>},{name,'CHANNEL_PROGRESS_MEDIA'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CHANNEL_PROGRESS_MEDIA',undefined]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.874.0>},{name,'conference::maintenance'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','conference::maintenance']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {<0.867.0>,ecallmgr_fs_event_stream_sup}
+     Context:    shutdown_error
+     Reason:     normal
+     Offender:   [{pid,<0.869.0>},{name,'whistle::masquerade'},{mfargs,{ecallmgr_fs_event_stream,start_link,['freeswitch@kazoo.viithiisys.com','CUSTOM','whistle::masquerade']}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     shutdown
+     Offender:   [{pid,<0.867.0>},{name,'freeswitch@kazoo.viithiisys.com_event_stream_sup'},{mfargs,{ecallmgr_fs_event_stream_sup,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.840.0>},{name,'freeswitch@kazoo.viithiisys.com_authn'},{mfargs,{ecallmgr_fs_authn,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.842.0>},{name,'freeswitch@kazoo.viithiisys.com_channel'},{mfargs,{ecallmgr_fs_channel,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.843.0>},{name,'freeswitch@kazoo.viithiisys.com_config'},{mfargs,{ecallmgr_fs_config,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:22 =SUPERVISOR REPORT====
+     Supervisor: {local,'freeswitch@kazoo.viithiisys.com'}
+     Context:    child_terminated
+     Reason:     noconnection
+     Offender:   [{pid,<0.841.0>},{name,'freeswitch@kazoo.viithiisys.com_route'},{mfargs,{ecallmgr_fs_route,start_link,['freeswitch@kazoo.viithiisys.com',[{cookie,change_me},{client_version,<<"mod_kazoo 1.2.17-0">>}]]}},{restart_type,permanent},{shutdown,6000},{child_type,worker}]
+
+2014-08-21 07:58:23 =ERROR REPORT====
+** Generic server <0.184.0> terminating 
+** Last message in was maintain_connection
+** When Server state == {wh_couch_connection,2,"127.0.0.1",15986,[],[],false,false,true,{server,undefined,undefined,undefined,[]}}
+** Reason for termination == 
+** {{try_clause,{error,{conn_failed,{error,econnrefused}}}},[{wh_couch_connection,maybe_reconnect,1,[{file,"src/wh_couch_connection.erl"},{line,241}]},{wh_couch_connection,handle_info,2,[{file,"src/wh_couch_connection.erl"},{line,179}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-08-21 07:58:23 =CRASH REPORT====
+  crasher:
+    initial call: wh_couch_connection:init/1
+    pid: <0.184.0>
+    registered_name: []
+    exception exit: {{{try_clause,{error,{conn_failed,{error,econnrefused}}}},[{wh_couch_connection,maybe_reconnect,1,[{file,"src/wh_couch_connection.erl"},{line,241}]},{wh_couch_connection,handle_info,2,[{file,"src/wh_couch_connection.erl"},{line,179}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [wh_couch_connection_sup,whistle_couch_sup,<0.163.0>]
+    messages: []
+    links: [<0.178.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 759141
+  neighbours:
+2014-08-21 07:58:23 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_couch_connection_sup}
+     Context:    child_terminated
+     Reason:     {{try_clause,{error,{conn_failed,{error,econnrefused}}}},[{wh_couch_connection,maybe_reconnect,1,[{file,"src/wh_couch_connection.erl"},{line,241}]},{wh_couch_connection,handle_info,2,[{file,"src/wh_couch_connection.erl"},{line,179}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.184.0>},{name,wh_couch_connection},{mfargs,{wh_couch_connection,start_link,[{wh_couch_connection,2,"127.0.0.1",15986,[],[],false,false,true,{server,undefined,undefined,undefined,[]}}]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2014-08-21 07:58:23 =SUPERVISOR REPORT====
+     Supervisor: {local,wh_couch_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.184.0>},{name,wh_couch_connection},{mfargs,{wh_couch_connection,start_link,[{wh_couch_connection,2,"127.0.0.1",15986,[],[],false,false,true,{server,undefined,undefined,undefined,[]}}]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2014-08-21 07:58:23 =SUPERVISOR REPORT====
+     Supervisor: {local,whistle_couch_sup}
+     Context:    child_terminated
+     Reason:     shutdown
+     Offender:   [{pid,<0.178.0>},{name,wh_couch_connection_sup},{mfargs,{wh_couch_connection_sup,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2014-08-21 07:58:31 =ERROR REPORT====
+Connection (<0.108.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-21 07:58:31 =ERROR REPORT====
+Connection (<0.110.0>) closing: received hard error {'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0} from server
+2014-08-21 07:58:31 =ERROR REPORT====
+** Generic server <0.108.0> terminating 
+** Last message in was socket_closed
+** When Server state == {state,amqp_network_connection,{state,#Port<0.13923>,600,<0.111.0>,131072,<0.107.0>,{server_initiated_close,320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>},false},<0.110.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]},0,[{<<"capabilities">>,table,[{<<"publisher_confirms">>,bool,true},{<<"exchange_exchange_bindings">>,bool,true},{<<"basic.nack">>,bool,true},{<<"consumer_cancel_notify">>,bool,true},{<<"connection.blocked">>,bool,true},{<<"consumer_priorities">>,bool,true},{<<"authentication_failure_close">>,bool,true}]},{<<"copyright">>,longstr,<<"Copyright (C) 2007-2013 GoPivotal, Inc.">>},{<<"information">>,longstr,<<"Licensed under the MPL.  See http://www.rabbitmq.com/">>},{<<"platform">>,longstr,<<"Erlang/OTP">>},{<<"product">>,longstr,<<"RabbitMQ">>},{<<"version">>,longstr,<<"3.2.0">>}],none,{closing,server_initiated_close,{'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0},none}}
+** Reason for termination == 
+** socket_closed_unexpectedly
+2014-08-21 07:58:31 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.108.0>
+    registered_name: []
+    exception exit: {socket_closed_unexpectedly,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.106.0>,amqp_sup,<0.95.0>]
+    messages: [{'$gen_call',{<0.105.0>,#Ref<0.0.0.100869>},{command,{close,{'connection.close',200,<<"Goodbye">>,0,0},5000}}}]
+    links: [<0.106.0>,#Port<0.13923>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 2908
+  neighbours:
+2014-08-21 07:58:31 =SUPERVISOR REPORT====
+     Supervisor: {<0.106.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     socket_closed_unexpectedly
+     Offender:   [{pid,<0.108.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.107.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-21 07:58:31 =SUPERVISOR REPORT====
+     Supervisor: {<0.106.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.108.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.107.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-21 07:58:31 =ERROR REPORT====
+** Generic server <0.110.0> terminating 
+** Last message in was socket_closed
+** When Server state == {state,amqp_network_connection,{state,#Port<0.14140>,600,<0.113.0>,131072,<0.109.0>,{server_initiated_close,320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>},false},<0.112.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]},0,[{<<"capabilities">>,table,[{<<"publisher_confirms">>,bool,true},{<<"exchange_exchange_bindings">>,bool,true},{<<"basic.nack">>,bool,true},{<<"consumer_cancel_notify">>,bool,true},{<<"connection.blocked">>,bool,true},{<<"consumer_priorities">>,bool,true},{<<"authentication_failure_close">>,bool,true}]},{<<"copyright">>,longstr,<<"Copyright (C) 2007-2013 GoPivotal, Inc.">>},{<<"information">>,longstr,<<"Licensed under the MPL.  See http://www.rabbitmq.com/">>},{<<"platform">>,longstr,<<"Erlang/OTP">>},{<<"product">>,longstr,<<"RabbitMQ">>},{<<"version">>,longstr,<<"3.2.0">>}],none,{closing,server_initiated_close,{'connection.close',320,<<"CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'">>,0,0},none}}
+** Reason for termination == 
+** socket_closed_unexpectedly
+2014-08-21 07:58:31 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.110.0>
+    registered_name: []
+    exception exit: {socket_closed_unexpectedly,[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.108.0>,amqp_sup,<0.97.0>]
+    messages: []
+    links: [<0.108.0>,#Port<0.14140>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 3912
+  neighbours:
+2014-08-21 07:58:31 =SUPERVISOR REPORT====
+     Supervisor: {<0.108.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     socket_closed_unexpectedly
+     Offender:   [{pid,<0.110.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.109.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-21 07:58:31 =SUPERVISOR REPORT====
+     Supervisor: {<0.108.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.110.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.109.0>,{amqp_params_network,<<"guest">>,<<"guest">>,<<"/">>,"127.0.0.1",5672,0,0,0,500,none,[#Fun<amqp_uri.7.4937118>,#Fun<amqp_uri.7.4937118>],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2014-08-26 00:32:16 =ERROR REPORT====
+Error in process <0.4179.0> on node 'whistle_apps@kazoo.viithiisys.com' with exit value: {{nocatch,function_clause},[{cf_exe,'-spawn_cf_module/3-fun-1-',4,[{file,"src/cf_exe.erl"},{line,622}]}]}
+

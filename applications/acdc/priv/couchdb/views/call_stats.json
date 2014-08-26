@@ -1,0 +1,8 @@
+{ "_id":"_design/call_stats"
+  ,"language":"javascript"
+  ,"views":{
+    "call_log": {
+      "map":"function(doc) { if ( doc.pvt_type != 'call_stat' ) return; emit([doc.queue_id, doc.entered_timestamp], null); }"
+    }
+  }
+}

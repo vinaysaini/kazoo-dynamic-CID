@@ -1,0 +1,6 @@
+$(EBIN_DIR)/rabbit_auth_backend_ldap_sup.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-auth-backend-ldap/src/rabbit_auth_backend_ldap_sup.erl
+$(EBIN_DIR)/rabbit_auth_backend_ldap.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-auth-backend-ldap/src/rabbit_auth_backend_ldap.erl
+$(EBIN_DIR)/rabbit_auth_backend_ldap_util.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-auth-backend-ldap/src/rabbit_auth_backend_ldap_util.erl
+$(EBIN_DIR)/rabbit_auth_backend_ldap_app.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-auth-backend-ldap/src/rabbit_auth_backend_ldap_app.erl
+$(TEST_EBIN_DIR)/rabbit_auth_backend_ldap_test.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-auth-backend-ldap/test/src/rabbit_auth_backend_ldap_test.erl
+$(DEPS_FILE): /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/generate_deps

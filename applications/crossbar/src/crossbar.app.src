@@ -1,0 +1,13 @@
+{application, crossbar,
+ [
+  {description, "Crossbar - REST Interface to the stars"}
+  ,{vsn, "0.3.5"}
+  ,{modules, []}
+  ,{registered, []}
+  ,{applications, [
+                   kernel
+                   ,stdlib
+                  ]}
+  ,{mod, { crossbar_app, []} }
+  ,{env, []}
+ ]}.

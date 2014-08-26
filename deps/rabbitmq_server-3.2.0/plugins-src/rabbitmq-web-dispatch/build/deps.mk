@@ -1,0 +1,9 @@
+$(TEST_EBIN_DIR)/rabbit_web_dispatch_test_unit.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-dispatch/test/src/rabbit_web_dispatch_test_unit.erl
+$(EBIN_DIR)/rabbit_web_dispatch.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-dispatch/src/rabbit_web_dispatch.erl
+$(EBIN_DIR)/rabbit_web_dispatch_registry.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-dispatch/src/rabbit_web_dispatch_registry.erl
+$(EBIN_DIR)/rabbit_webmachine.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-dispatch/src/rabbit_webmachine.erl
+$(TEST_EBIN_DIR)/rabbit_web_dispatch_test.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-dispatch/test/src/rabbit_web_dispatch_test.erl
+$(EBIN_DIR)/rabbit_web_dispatch_util.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-dispatch/src/rabbit_web_dispatch_util.erl
+$(EBIN_DIR)/rabbit_web_dispatch_app.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-dispatch/src/rabbit_web_dispatch_app.erl
+$(EBIN_DIR)/rabbit_web_dispatch_sup.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-dispatch/src/rabbit_web_dispatch_sup.erl
+$(DEPS_FILE): /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/generate_deps

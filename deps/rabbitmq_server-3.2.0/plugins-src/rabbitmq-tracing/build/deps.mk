@@ -1,0 +1,13 @@
+$(EBIN_DIR)/rabbit_tracing_files.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-tracing/src/rabbit_tracing_files.erl
+$(EBIN_DIR)/rabbit_tracing_wm_files.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-tracing/src/rabbit_tracing_wm_files.erl
+$(TEST_EBIN_DIR)/rabbit_tracing_test.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-tracing/test/src/rabbit_tracing_test.erl
+$(EBIN_DIR)/rabbit_tracing_traces.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-tracing/src/rabbit_tracing_traces.erl
+$(EBIN_DIR)/rabbit_tracing_mgmt.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-tracing/src/rabbit_tracing_mgmt.erl
+$(EBIN_DIR)/rabbit_tracing_consumer_sup.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-tracing/src/rabbit_tracing_consumer_sup.erl
+$(EBIN_DIR)/rabbit_tracing_wm_file.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-tracing/src/rabbit_tracing_wm_file.erl
+$(EBIN_DIR)/rabbit_tracing_app.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-tracing/src/rabbit_tracing_app.erl
+$(EBIN_DIR)/rabbit_tracing_consumer.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-tracing/src/rabbit_tracing_consumer.erl
+$(EBIN_DIR)/rabbit_tracing_wm_trace.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-tracing/src/rabbit_tracing_wm_trace.erl
+$(EBIN_DIR)/rabbit_tracing_wm_traces.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-tracing/src/rabbit_tracing_wm_traces.erl
+$(EBIN_DIR)/rabbit_tracing_sup.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-tracing/src/rabbit_tracing_sup.erl
+$(DEPS_FILE): /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/generate_deps

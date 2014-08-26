@@ -1,0 +1,11 @@
+$(EBIN_DIR)/rabbit_ws_client_sup.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-stomp/src/rabbit_ws_client_sup.erl
+$(TEST_EBIN_DIR)/rabbit_ws_test_sockjs_websocket.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-stomp/test/src/rabbit_ws_test_sockjs_websocket.erl
+$(EBIN_DIR)/rabbit_ws_client.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-stomp/src/rabbit_ws_client.erl
+$(TEST_EBIN_DIR)/rfc6455_client.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-stomp/test/src/rfc6455_client.erl
+$(TEST_EBIN_DIR)/rabbit_ws_test_raw_websocket.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-stomp/test/src/rabbit_ws_test_raw_websocket.erl
+$(TEST_EBIN_DIR)/stomp.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-stomp/test/src/stomp.erl
+$(EBIN_DIR)/rabbit_ws_app.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-stomp/src/rabbit_ws_app.erl
+$(TEST_EBIN_DIR)/rabbit_ws_test_all.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-stomp/test/src/rabbit_ws_test_all.erl
+$(EBIN_DIR)/rabbit_ws_sockjs.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-stomp/src/rabbit_ws_sockjs.erl
+$(EBIN_DIR)/rabbit_ws_sup.beam: /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/rabbitmq-web-stomp/src/rabbit_ws_sup.erl
+$(DEPS_FILE): /var/lib/jenkins/workspace/Kazoo/label/CentOS-6-x86_64-R15B/rpm/BUILD/Kazoo/deps/rabbitmq_server-3.2.0/plugins-src/generate_deps
